@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Study Planner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">📘 AI Planner</div>
+
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="subjects.html">Subjects</a></li>
+<li><a href="schedule.html">Plan</a></li>
+<li><a href="progress.html">Progress</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+<li><a href="#" onclick="logoutUser()">Logout</a></li>
+</ul>
+</nav>
+
+<header class="hero">
+<h1 id="welcome-user">Welcome 👋</h1>
+<p id="typing-text"></p>
+
+<div id="clock"></div>
+
+<p id="quote"></p>
+
+</header>
+
+<div class="dashboard">
+
+<div class="card" onclick="location.href='subjects.html'">
+<h3>📚 Subjects</h3>
+<p>Add and manage subjects</p>
+</div>
+
+<div class="card" onclick="location.href='schedule.html'">
+<h3>📅 Study Plan</h3>
+<p>Generate AI timetable</p>
+</div>
+
+<div class="card" onclick="location.href='progress.html'">
+<h3>📈 Progress</h3>
+<p>Track your growth</p>
+</div>
+
+<div class="card" onclick="location.href='weak.html'">
+<h3>🎯 Weak Areas</h3>
+<p>Focus where needed</p>
+</div>
+
+<div class="card" onclick="location.href='reminder.html'">
+<h3>⏰ Reminder</h3>
+<p>Stay on time daily</p>
+</div>
+
+<div class="card" id="deadline-card">
+    <h3>⚠️ Upcoming Deadlines</h3>
+    <div id="deadline-list">
+        <p>No upcoming deadlines</p>
+    </div>
+</div>
+
+<div class="card">
+    <h3>🏆 Achievements</h3>
+    <div id="badges">
+        <p>No achievements yet</p>
+    </div>
+</div>
+
+<div class="card progress-card" onclick="location.href='progress.html'">
+<h3>🔥 Today's Progress</h3>
+<div class="progress-bar">
+<div class="fill"></div>
+</div>
+<p id="progress-text">0 Subjects Added</p>
+</div>
+
+<div class="card">
+    <h2>📊 Dashboard Stats</h2>
+
+    <p>📚 Total Subjects :
+        <span id="total-subjects">0</span>
+    </p>
+
+    <p>✅ Completed :
+        <span id="completed-subjects">0</span>
+    </p>
+
+    <p>⏳ Pending :
+        <span id="pending-subjects">0</span>
+    </p>
+</div>
+
+<div class="card">
+    <h3>🔥 Study Streak</h3>
+    <p id="streak-count">0 Days</p>
+    <p>Keep Going!</p>
+</div>
+
+</div>
+
+<footer class="footer">
+<p>Made with ❤️ by Devendra | AI Study Planner</p>
+</footer>
+
+<script src="auth.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Plan</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+   let token = localStorage.getItem("token");
+
+   if(!token){
+       window.location.href = "login.html";
+   }
+</script>
+
+<header class="header">
+<h1>📅 AI Study Plan</h1>
+<p>Your personalized smart timetable</p>
+<nav class="navbar">
+<div class="logo">📘 AI Planner</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="subjects.html">Subjects</a></li>
+<li><a href="schedule.html" class="active">Plan</a></li>
+<li><a href="progress.html">Progress</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+</ul>
+</nav>
+
+<header class="hero">
+<h1>📅 Study Plan</h1>
+<p>Your smart generated study schedule</p>
+</header>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>Generate Daily Plan</h3>
+<p>Create timetable based on your subjects.</p>
+<br>
+<button id="generateBtn" onclick="generatePlan()">
+    Generate Plan
+</button>
+</div>
+
+<div class="card">
+<h3>📋 Today's Plan</h3>
+<div id="quote-box"></div>
+<div id="study-plan" class="plan-list"></div>
+<div id="score-box"></div>
+<button onclick="exportPDF()" id="exportBtn">
+    📄 Export Study Plan PDF
+</button>
+</div>
+
+</div>
+
+<footer class="footer">
+<p>Made with ❤️ by Devendra | AI Study Planner</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="app.js"></script>
+</body>
+</html>

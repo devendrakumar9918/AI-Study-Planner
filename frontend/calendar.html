@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">📘 AI Planner</div>
+
+    <ul class="nav-links">
+       <li><a href="index.html">Home</a></li>
+       <li><a href="subjects.html">Subjects</a></li>
+       <li><a href="schedule.html">Plan</a></li>
+       <li><a href="progress.html">Progress</a></li>
+       <li><a href="calendar.html" class="active">Calendar</a></li>
+       <li><a href="#" onclick="logoutUser()">Logout</a></li>
+    </ul>
+</nav>
+
+
+
+    <div class="calendar-container">
+
+    <div class="page-header">
+    <h1>📅 Study Calendar</h1>
+    <p>Track all your study deadlines in one place</p>
+    </div>
+
+    <div id="calendar"></div>
+
+    </div>
+
+    <div id="eventModal" class="event-modal">
+    <div class="event-box">
+
+        <span id="closeModal">&times;</span>
+
+        <h2 id="modalTitle"></h2>
+
+        <p><strong>⭐ Difficulty:</strong> <span id="modalDifficulty"></span></p>
+
+        <p><strong>✅ Completed:</strong> <span id="modalCompleted"></span></p>
+
+        <p><strong>📅 Deadline:</strong> <span id="modalDate"></span></p>
+
+        <button id="completeBtn" class="complete-btn">
+           ✔ Mark Complete
+        </button>
+
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subjects</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+
+<nav class="navbar">
+<div class="logo">📘 AI Planner</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="subjects.html" class="active">Subjects</a></li>
+<li><a href="schedule.html">Plan</a></li>
+<li><a href="progress.html">Progress</a></li>
+<li><a href="calendar.html">Calendar</a></li>
+</ul>
+</nav>
+
+<header class="hero">
+<h1>📚 Manage Subjects</h1>
+<p>Add subjects and track deadlines easily</p>
+</header>
+
+<div class="dashboard">
+
+<div class="card subject-form">
+
+<h3>Add New Subject</h3>
+
+<input type="text" id="subject-name" placeholder="Enter Subject Name">
+
+<input type="date" id="deadline">
+
+<select id="difficulty">
+<option>Easy</option>
+<option>Medium</option>
+<option>Hard</option>
+</select>
+
+<br><br>
+
+<button class="add-btn" onclick="addSubject()">➕ Add Subject</button>
+
+</div>
+
+<div class="card">
+<h3>📖 Your Subjects</h3>
+
+<input
+    type="text"
+    id="search-subject"
+    placeholder="🔍 Search Subject..."
+    onkeyup="searchSubjects()"
+>
+<br><br>
+
+<select id="filter-difficulty" onchange="loadSubjects()">
+    <option value="All">All Difficulty</option>
+    <option value="Easy">Easy</option>
+    <option value="Medium">Medium</option>
+    <option value="Hard">Hard</option>
+</select>
+
+<br><br>
+
+<div id="subject-list"></div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+<p>Made with ❤️ by Devendra | AI Study Planner</p>
+</footer>
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

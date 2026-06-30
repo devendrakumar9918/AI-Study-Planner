@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reminder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+   let token = localStorage.getItem("token");
+
+   if(!token){
+       window.location.href = "login.html";
+   }
+</script>
+
+<nav class="navbar">
+<div class="logo">📘 AI Planner</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="subjects.html">Subjects</a></li>
+<li><a href="schedule.html">Plan</a></li>
+<li><a href="progress.html">Progress</a></li>
+<li><a href="reminder.html" class="active">Reminder</a></li>
+</ul>
+</nav>
+
+<header class="hero">
+<h1>⏰ Smart Reminder</h1>
+<p>Stay on track with study alerts</p>
+</header>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>➕ Add Reminder</h3>
+
+<input type="text" id="reminder-title" placeholder="Reminder Title">
+
+<input type="time" id="reminder-time">
+
+<br><br>
+
+<button class="add-btn" onclick="saveReminder()">⏰ Save Reminder</button>
+</div>
+
+<div class="card">
+<h3>📋 Upcoming Reminder</h3>
+<div id="reminder-list"></div>
+</div>
+
+</div>
+
+<footer class="footer">
+<p>Made with ❤️ by Devendra | AI Study Planner</p>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
