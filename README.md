@@ -6,23 +6,23 @@ An AI-powered Study Planner that helps students organize subjects, generate pers
 
 ## 🚀 Features
 
-- 👤 User Authentication (Signup & Login)
-- 🔐 JWT Authentication
-- 📖 Subject Management
-- 🤖 AI Study Plan Generation using Google Gemini
-- 📅 Study Schedule
-- 📆 Calendar
-- 📊 Progress Tracking
-- ⏰ Study Reminders
-- 📱 Responsive User Interface
+- 🔐 User Authentication (Signup & Login)
+- 🔑 JWT Authentication
+- 📚 Add & Delete Subjects
+- ✅ Mark Subjects as Completed
+- 📊 Progress Tracking Dashboard
+- 🤖 AI Study Plan Generation using Google Gemini AI
+- 📅 Deadline Management
+- 🎯 Difficulty-based Subject Organization
+- 💾 MongoDB Database Integration
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
 ### Backend
@@ -35,34 +35,39 @@ An AI-powered Study Planner that helps students organize subjects, generate pers
 
 ### Authentication
 - JWT (JSON Web Token)
-- bcrypt
+- bcrypt.js
 
-### AI
+### AI Integration
 - Google Gemini API
 
 ---
 
 ## 📂 Project Structure
 
-```
-AI-STUDY-PLANNER
+AI-Study-Planner/
 │
-├── backend
-│   ├── server.js
-│   ├── user.js
-│   ├── subject.js
-│   ├── package.json
+├── backend/
+│ ├── server.js
+│ ├── user.js
+│ ├── subject.js
+│ ├── package.json
+│ └── .gitignore
 │
-├── frontend
-│   ├── index.html
-│   ├── login.html
-│   ├── signup.html
-│   ├── app.js
-│   ├── auth.js
-│   ├── style.css
+├── frontend/
+│ ├── index.html
+│ ├── login.html
+│ ├── signup.html
+│ ├── subjects.html
+│ ├── progress.html
+│ ├── reminder.html
+│ ├── schedule.html
+│ ├── calendar.html
+│ ├── app.js
+│ ├── auth.js
+│ ├── calendar.js
+│ └── style.css
 │
 └── README.md
-```
 
 ---
 
@@ -71,43 +76,65 @@ AI-STUDY-PLANNER
 ### Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone https://github.com/devendrakumar9918/AI-Study-Planner.git
 ```
 
-### Backend
+### Go to Backend
 
 ```bash
-cd backend
+cd AI-Study-Planner/backend
+```
+
+### Install Dependencies
+
+```bash
 npm install
+```
+
+### Create .env
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+### Start Server
+
+```bash
 node server.js
 ```
 
----
-
-## Environment Variables
-
-Create a `.env` file inside backend.
-
-```
-PORT=5000
-MONGODB_URI=YOUR_MONGODB_URI
-JWT_SECRET=YOUR_SECRET
-GEMINI_API_KEY=YOUR_API_KEY
-```
+Open frontend/index.html using Live Server.
 
 ---
 
-## Future Improvements
+## 🔑 Environment Variables
 
-- AI-based Weak Topic Detection
-- Smart Revision Planner
-- Email Notifications
-- Study Analytics Dashboard
+| Variable | Description |
+|----------|-------------|
+| MONGODB_URI | MongoDB Atlas Connection String |
+| JWT_SECRET | JWT Secret Key |
+| GEMINI_API_KEY | Google Gemini API Key |
 
 ---
 
-## Author
+## 🚀 Future Improvements
 
-Devendra Kumar
-B.Tech CSE
-AI & Full Stack Web Development Enthusiast
+- ✏️ Edit Subject
+- 📱 Mobile Responsive Design
+- 🌙 Dark / Light Mode
+- 📧 Email Reminder
+- 📄 Export Study Plan as PDF
+- ☁️ Cloud Deployment
+
+---
+
+## 👨‍💻 Author
+
+**Devendra Kumar**
+
+GitHub:
+https://github.com/devendrakumar9918
