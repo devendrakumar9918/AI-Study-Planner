@@ -21,10 +21,16 @@ app.use(cors());
 app.use(express.json());
 
 // 👇 MongoDB connection
+console.log(process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log(err));
-
+.then(() => {
+    console.log("✅ MongoDB Connected");
+    console.log("Database:", mongoose.connection.db.databaseName);
+    console.log("Ready State:", mongoose.connection.readyState);
+})
+.catch(err => {
+    console.error("Mongo Error:", err);
+});
 // test route
 app.get("/", (req, res) => {
     res.send("MY NEW TEST MESSAGE");
@@ -32,7 +38,7 @@ app.get("/", (req, res) => {
 
 app.post("/signup", async (req, res) => {
 
-try{
+    try {
 
 const { name, email, password } = req.body;
 
@@ -53,9 +59,13 @@ await newUser.save();
 
 res.json({ message: "Signup Successful" });
 
-}catch(error){
-  console.log("Signup error:", error);
-res.json({ message: "Error Signup" });
+}catch (error) {
+    console.error("Signup Error:");
+    console.error(error);
+
+    res.status(500).json({
+        message: error.message
+    });
 }
 
 });
@@ -137,7 +147,7 @@ app.get("/subjects", async (req,res) => {
     let data = await Subject.find({ email: email });
 
 
-    console.log(data);
+    // console.log(data);
 
     res.json(data);
   } catch(error) {
@@ -165,10 +175,10 @@ res.json({ message: "Error deleting subject" });
 });
 
 app.put("/complete-subject/:id", async (req, res) => {
-    console.log("COMPLETE SUBJECT ROUTE HIT");
+    // console.log("COMPLETE SUBJECT ROUTE HIT");
 
-        console.log("PUT ROUTE HIT");
-        console.log(req.params.id);
+        // console.log("PUT ROUTE HIT");
+        // console.log(req.params.id);
     try {
         await Subject.findByIdAndUpdate(req.params.id, {
             completed: true
@@ -185,9 +195,10 @@ app.put("/complete-subject/:id", async (req, res) => {
 console.log("SERVER FILE LOADED");
 
 app.post("/generate-plan", async (req, res) => {
+    // console.log("✅ NEW AI PROMPT RUNNING");
     try {
 
-        console.log("GENERATE PLAN ROUTE HIT");
+        // console.log("GENERATE PLAN ROUTE HIT");
 
         const { subjects } = req.body;
 
@@ -195,13 +206,54 @@ app.post("/generate-plan", async (req, res) => {
             model: "gemini-2.5-flash"
         });
 
-        const prompt = `
-Create a daily study timetable for:
+const prompt = `
+You are an AI Study Planner.
+
+Subjects:
 ${subjects}
 
-Give timetable with timings.
-`;
+Create ONLY a one-day study timetable.
 
+Rules:
+- Start from 9:00 AM
+- End at 6:00 PM
+- Include short breaks
+- Maximum 8 study sessions
+- Keep each task in 1 line
+- Keep total response under 250 words
+
+Format exactly like this:
+
+# AI Study Plan
+
+09:00 AM - 10:30 AM | DSA
+10:30 AM - 10:45 AM | Break
+10:45 AM - 12:00 PM | DBMS
+12:00 PM - 01:00 PM | Aptitude
+01:00 PM - 02:00 PM | Lunch
+02:00 PM - 03:30 PM | DSA Practice
+03:30 PM - 03:45 PM | Break
+03:45 PM - 05:00 PM | DBMS Revision
+05:00 PM - 06:00 PM | Aptitude Practice
+
+if(line.includes("Study Tips")){
+    doc.setTextColor(52,152,219);
+    doc.setFont("helvetica","bold");
+}else{
+    doc.setTextColor(40);
+    doc.setFont("helvetica","normal");
+}
+
+Study Tips:
+• Tip 1
+• Tip 2
+• Tip 3
+
+Do not explain anything.
+Do not write paragraphs.
+Do not write introductions.
+Only return the timetable.
+`;
         const result = await model.generateContent(prompt);
 
         res.json({
