@@ -4,7 +4,7 @@ let name = document.getElementById("signup-name").value;
 let email = document.getElementById("signup-email").value;
 let password = document.getElementById("signup-password").value;
 
-let res = await fetch("http://localhost:5000/signup",{
+let res = await fetch("https://ai-study-planner-idkt.onrender.com/signup",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -29,7 +29,7 @@ async function loginUser(){
 let email = document.getElementById("login-email").value;
 let password = document.getElementById("login-password").value;
 
-let res = await fetch("http://localhost:5000/login",{
+let res = await fetch("https://ai-study-planner-idkt.onrender.com/login",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"

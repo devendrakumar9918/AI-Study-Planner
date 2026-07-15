@@ -174,7 +174,7 @@ try{
 let user = JSON.parse(localStorage.getItem("user"));
 
 let res = await fetch(
-`http://localhost:5000/subjects?email=${user.email}`
+`https://ai-study-planner-idkt.onrender.com/subjects?email=${user.email}`
 );
 
 let subjects = await res.json();
@@ -226,7 +226,7 @@ async function loadAchievements() {
     if (!user) return;
 
     let res = await fetch(
-        "http://localhost:5000/subjects?email=" + user.email
+        "https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email
     );
 
     let subjects = await res.json();
@@ -279,7 +279,7 @@ async function loadDeadlineAlerts() {
     if (!user) return;
 
     let res = await fetch(
-        "http://localhost:5000/subjects?email=" + user.email
+        "https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email
     );
 
     let subjects = await res.json();
@@ -324,7 +324,7 @@ async function loadWeakAreas() {
         let user = JSON.parse(localStorage.getItem("user"));
 
         let res = await fetch(
-            `http://localhost:5000/subjects?email=${user.email}`
+            `https://ai-study-planner-idkt.onrender.com/subjects?email=${user.email}`
         );
 
         let subjects = await res.json();
@@ -462,7 +462,7 @@ async function addSubject() {
     level: difficulty
 });
 
-    let res = await fetch("http://localhost:5000/add-subject", {
+    let res = await fetch("https://ai-study-planner-idkt.onrender.com/add-subject", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -498,7 +498,7 @@ async function loadSubjects(){
 
 let user = JSON.parse(localStorage.getItem("user"));
 
-let res = await fetch("http://localhost:5000/subjects?email=" + user.email);
+let res = await fetch("https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email);
 
 let subjects = await res.json();
 
@@ -563,7 +563,7 @@ function searchSubjects() {
 
 async function deleteMongoSubject(id){
 
-await fetch("http://localhost:5000/delete-subject/" + id,{
+await fetch("https://ai-study-planner-idkt.onrender.com/delete-subject/" + id,{
 method:"DELETE"
 });
 
@@ -572,7 +572,7 @@ loadSubjects();
 }
 async function completeSubject(id){
 
-    await fetch("http://localhost:5000/complete-subject/" + id,{
+    await fetch("https://ai-study-planner-idkt.onrender.com/complete-subject/" + id,{
         method:"PUT"
     });
 
@@ -599,7 +599,7 @@ let user = JSON.parse(localStorage.getItem("user"));
 
 if(!user) return;
 
-let res = await fetch("http://localhost:5000/subjects?email=" + user.email);
+let res = await fetch("https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email);
 
 let subjects = await res.json();
 
@@ -763,7 +763,7 @@ btn.innerText = "Generating...";
     JSON.parse(localStorage.getItem("user"));
 
     let res = await fetch(
-        "http://localhost:5000/subjects?email=" + user.email
+        "https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email
     );
 
     let subjects = await res.json();
@@ -771,7 +771,7 @@ btn.innerText = "Generating...";
     let subjectNames = subjects.map(sub => sub.subject);
 
     let aiRes = await fetch(
-        "http://localhost:5000/generate-plan",
+        "https://ai-study-planner-idkt.onrender.com/generate-plan",
         {
             method: "POST",
             headers: {
@@ -914,7 +914,7 @@ async function loadDashboardStats() {
     if (!user) return;
 
     let res = await fetch(
-        "http://localhost:5000/subjects?email=" + user.email
+        "https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email
     );
 
     let subjects = await res.json();

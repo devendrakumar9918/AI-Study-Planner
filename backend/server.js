@@ -33,7 +33,10 @@ mongoose.connect(process.env.MONGODB_URI)
 });
 // test route
 app.get("/", (req, res) => {
-    res.send("MY NEW TEST MESSAGE");
+    res.json({
+        status: "Backend is running 🚀",
+        project: "AI Study Planner"
+    });
 });
 
 app.post("/signup", async (req, res) => {

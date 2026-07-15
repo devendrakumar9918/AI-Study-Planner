@@ -6,7 +6,7 @@ async function loadCalendar() {
     if (!user) return;
 
     const res = await fetch(
-        "http://localhost:5000/subjects?email=" + user.email
+        "https://ai-study-planner-idkt.onrender.com/subjects?email=" + user.email
     );
 
     const subjects = await res.json();
@@ -90,7 +90,7 @@ async function loadCalendar() {
     if (selectedEvent.extendedProps.completed) return;
 
     const res = await fetch(
-        "http://localhost:5000/subjects/" + selectedEvent.id,
+        "https://ai-study-planner-idkt.onrender.com/subjects/" + selectedEvent.id,
         {
             method: "PUT",
             headers: {
