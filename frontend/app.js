@@ -406,15 +406,7 @@ welcome.innerText = "Welcome " + user.name + " 👋";
 
 showUserName();
 
-function logoutUser(){
 
-localStorage.removeItem("user");
-
-alert("Logged Out Successfully");
-
-window.location.href = "login.html";
-
-}
 
 function updateRealProgress(){
 
@@ -826,12 +818,7 @@ catch(err){
 
 }
 
-function logoutUser() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
 
-    window.location.href = "login.html";
-}
 
 async function exportPDF() {
 
@@ -938,3 +925,10 @@ async function loadDashboardStats() {
 }
 
 loadDashboardStats();
+
+function logoutUser() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+
+    window.location.href = "login.html";
+}

@@ -239,13 +239,6 @@ Format exactly like this:
 03:45 PM - 05:00 PM | DBMS Revision
 05:00 PM - 06:00 PM | Aptitude Practice
 
-if(line.includes("Study Tips")){
-    doc.setTextColor(52,152,219);
-    doc.setFont("helvetica","bold");
-}else{
-    doc.setTextColor(40);
-    doc.setFont("helvetica","normal");
-}
 
 Study Tips:
 • Tip 1
