@@ -18,6 +18,52 @@ An AI-powered Study Planner that helps students organize subjects, generate pers
 
 ---
 
+# 📸 Project Screenshots
+
+## 🔐 Login Page
+
+![Login](screenshots/login.png)
+
+---
+
+## 📝 Signup Page
+
+![Signup](screenshots/signup.png)
+
+---
+
+## 🏠 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+## 📚 Subject Management
+
+![Subjects](screenshots/subjects.png)
+
+---
+
+## 🤖 AI Study Plan
+
+![Study Plan](screenshots/study-plan.png)
+
+---
+
+## 📈 Progress Tracker
+
+![Progress](screenshots/progress.png)
+
+---
+
+## 📅 Study Calendar
+
+![Calendar](screenshots/calendar.png)
+
+---
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
